@@ -5,7 +5,7 @@
 ## Login   <parede_h@etna-alternance.net>
 ##
 ## Started on  Fri Oct 20 19:11:05 2017 PAREDES Ale
-## Last update Tue Oct 31 15:17:03 2017 PAREDES Ale
+## Last update Mon Nov  6 10:40:40 2017 PAREDES Ale
 ##
 ##
 CC	=	gcc
@@ -14,17 +14,20 @@ NAME	=	my_print
 
 SRC     =      	main.c			\
 		char.c			\
+		string.c		\
 		int.c			\
 		function_array_pointer.c\
-		my_printf.c
+		my_printf.c		\
+		buffer.c
 
-CFLAGS	=	-W -Wall -Werror
-LDFLAGS	=	-lmy
+FLAGS	=	-W -Wall -Werror
+OBJ	=	$(SRC:.c=.o)
+LDFLAGS	=	-Llibmy_02/. -lmy
 RM	=	rm -f
 
 
-$(NAME):
-		$(CC) -g $(CFLAGS) $(SRC) -o $(NAME) -Llibmy_02/. $(LDFLAGS)
+$(NAME):	$(OBJ)
+		$(CC) -g $(FLAGS) $(SRC) -o $(NAME) $(LDFLAGS)
 
 all:		$(NAME)
 

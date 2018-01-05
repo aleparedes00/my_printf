@@ -1,17 +1,16 @@
-#ifndef		_PRINTF_H_
-# define	_PRINTF_H_
-# define	OPTS 3
+#ifndef		_MY_PRINTF_H_
+# define	_MY_PRINTF_H_
+# define	OPTS 4
 #include <stdarg.h>
 #include <stdlib.h>
 
 typedef struct	s_percent_action
 {
   char		c;
-  char		*(*f)();
+  void		(*f)();
 } t_percent_action;
 
-char    *read_percent_val(char *end, char **start, va_list a_list, char *dest);
-char    *add_to_string(char *dest, char *end, char *start);
-char    *add_value_to_string(char *dest, char *src);
-
+void    select_option(char c, va_list a_list);
+void	cpy_buffer(char *str);
+void	adding_to_buffer(char *str);
 #endif

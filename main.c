@@ -6,10 +6,10 @@ int	my_printf(char *, ...);
 
 int	main()
 {
-  char *test = "\0";
+  my_printf("print this %s\n", "testing");
+  printf("offical printf\n");
 
-  my_strlen(test);
-
-  my_printf("ceci, ce n'est %cas u%c example\n", 'p', 'n');
+  //  my_printf("ceci, ce n'est %cas u%dd example plus %s hola\n",
+  // 'p', 153, "something esle");
   return (0);
 }

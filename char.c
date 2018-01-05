@@ -12,14 +12,11 @@
 #include "libmy.h"
 #include "my_printf.h"
 
-char	*get_char(char value)
+void	get_char(char value)
 {
-  char	*ret;
+  char	ret[2];
 
-  ret = malloc(sizeof(char) * 2);
-  if (ret == NULL)
-    return (NULL);
   ret[0] = value;
   ret[1] = '\0';
-  return (ret);
+  adding_to_buffer(ret);
 }

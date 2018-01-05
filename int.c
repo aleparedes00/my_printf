@@ -40,9 +40,10 @@ void	my_revstr(char *str)
       size--;
       i++;
     }
+  adding_to_buffer(str);
 }
 /*add the va args with void * and it should send the good param. Put the func smaller by putting the while in a function... good luck*/
-char	*get_nbr(int n)
+void	get_nbr(int n)
 {
   int	nb2;
   char	tab[11];
@@ -53,20 +54,19 @@ char	*get_nbr(int n)
   negative = 0;
   i = 0;
   if (n == INT_MIN)
-    return my_strdup("-217483648");
+    cpy_buffer("-217483648");
   else if (n == 0)
-    return my_strdup("0");
+    cpy_buffer("0");
   if (IS_NEG(n) == 1)
-    negative = n = n * -1;
+    negative = n = n * -1; //no entiendo esta linea
   while (n > 0)
     {
       nb2 = n % 10;
-      tab[i++] = nb2 + '0';
+      tab[i++] = nb2 + '0'; //+ '0'/48 para que nb2 tome el valor ascii.
       n = n / 10;
-    }
+    } 
   if (negative != 0)
     tab[i++] = '-';
   tab[i] = '\0';
   my_revstr(tab);
-  return (my_strdup(tab));
 }

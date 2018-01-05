@@ -9,6 +9,9 @@
 */
 #include <unistd.h>
 #define IS_NEG(x)	(x < 0 ? 1 : 0)
+#define INT_MIN		(-217483648)
+
+int     is_int_min(int n);
 
 static void    my_swap_char(char *a, char *b)
 {
@@ -72,7 +75,7 @@ void	my_put_nbr(int n)
       n = n / 10;
     }
   tab[i] = '\0';
-  my_put_revstr(tab);
+  put_revstr(tab);
 }
 
 int     is_int_min(int n)
